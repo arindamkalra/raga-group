@@ -26,13 +26,20 @@
   --bg:#0f1715; --surface:#16211e; --ink:#e7ece8; --muted:#9aa8a2; --line:#2a3a35; --brass:#d9a54a; --brass-ink:#14100a; color-scheme:dark}
 *{box-sizing:border-box}
 body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;padding-inline:20px;padding-block:0}
-.wrap{max-width:720px;margin:0 auto;display:flex;flex-direction:column;gap:64px;padding-block:48px 64px}
+.wrap{max-width:1180px;margin:0 auto;display:flex;flex-direction:column;gap:72px;padding-block:48px 64px}
+.hero{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:56px;align-items:end;padding-top:24px}
+.hero h1{font-size:clamp(2.4rem,5.2vw,4.4rem)}
+.hero-side{display:flex;flex-direction:column;gap:24px;min-width:0}
+.hero-side .lede{margin:0}
+.split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px}
+.split>section{min-width:0}
+@media (max-width:860px){.hero,.split{grid-template-columns:1fr;gap:40px}}
 header{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
 .mark{font-family:var(--display);font-size:1.25rem;letter-spacing:.01em}
 .tag{font-family:var(--mono);font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
 h1{font-family:var(--display);font-weight:400;font-size:clamp(2.2rem,6vw,3.4rem);line-height:1.08;margin:0 0 20px;text-wrap:balance}
-.lede{color:var(--muted);max-width:58ch;margin:0 0 28px}
-.btn{display:inline-block;background:var(--brass);color:var(--brass-ink);text-decoration:none;font-weight:600;padding:14px 22px;border-radius:4px}
+.lede{color:var(--muted);max-width:58ch;margin:0 0 28px;font-size:1.05rem}
+.btn{display:inline-block;align-self:flex-start;background:var(--brass);color:var(--brass-ink);text-decoration:none;font-weight:600;padding:14px 22px;border-radius:4px}
 .btn:hover{filter:brightness(1.08)}
 .btn:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
 h2{font-family:var(--mono);font-weight:500;font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:0 0 16px}
@@ -62,12 +69,15 @@ footer{font-size:.85rem;color:var(--muted);border-top:1px solid var(--line);padd
     <div class="tag">Family Office · India</div>
   </header>
 
-  <section>
+  <section class="hero">
     <h1>Patient capital for India's next listed companies.</h1>
-    <p class="lede">We back profitable or near-profitable consumer, D2C and logistics businesses that are two to three years from an IPO. Simple businesses, real revenue, founders building for the public markets.</p>
-    <a class="btn" href="https://calendly.com/arindamkalra/30min" target="_blank" rel="noopener">Book a 30-minute call</a>
+    <div class="hero-side">
+      <p class="lede">We back profitable or near-profitable consumer, D2C and logistics businesses that are two to three years from an IPO. Simple businesses, real revenue, founders building for the public markets.</p>
+      <a class="btn" href="https://calendly.com/arindamkalra/30min" target="_blank" rel="noopener">Book a 30-minute call</a>
+    </div>
   </section>
 
+  <div class="split">
   <section>
     <h2>Investment thesis</h2>
     <ul class="thesis">
@@ -86,7 +96,9 @@ footer{font-size:.85rem;color:var(--muted);border-top:1px solid var(--line);padd
       <div class="row"><dt>Instruments</dt><dd>Primary rounds and secondary purchases</dd></div>
     </dl>
   </section>
+  </div>
 
+  <div class="split">
   <section>
     <h2>Who should reach out</h2>
     <ul class="who">
@@ -99,6 +111,7 @@ footer{font-size:.85rem;color:var(--muted);border-top:1px solid var(--line);padd
     <p>Raising a round, or looking to sell shares in a late-stage company? Pick a time that suits you.</p>
     <a class="btn" href="https://calendly.com/arindamkalra/30min" target="_blank" rel="noopener">Schedule with Arindam</a>
   </section>
+  </div>
 
   <footer>Raga Group Investments · Arindam Kalra · India</footer>
 </div>
